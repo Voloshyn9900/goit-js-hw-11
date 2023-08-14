@@ -14,6 +14,9 @@ let currentPage = 1;
 let query = '';
 let totalHits = 0;
 
+refs.loadMoreBtn.disabled = true;
+refs.loadMoreBtn.style.backgroundColor = 'gray';
+
 function onFormSubmit(e) {
   e.preventDefault();
 
@@ -33,8 +36,10 @@ function onFormSubmit(e) {
         if (data.hits.length !== 0) {
             createMarkup(data.hits);
             totalHits = Math.ceil((data.totalHits) / 40);
-            console.log(totalHits);
+            // console.log(totalHits);
             refs.loadMoreBtn.removeAttribute("hidden")
+            refs.loadMoreBtn.disabled = false;
+            refs.loadMoreBtn.style.backgroundColor = '#008cff';
         } else {
             Notiflix.Notify.failure(
               'Sorry, there are no images matching your search query. Please try again.'
@@ -48,13 +53,13 @@ function onLoadMore() {
     getImages(query, currentPage).then(data => {
         createMarkup(data.hits);
        if (currentPage >= totalHits) {
-         console.log(totalHits);
+        //  console.log(totalHits);
          refs.loadMoreBtn.setAttribute('hidden', true);
          Notiflix.Notify.warning(
            `We're sorry, but you've reached the end of search results.`
          );
        } 
-     });
+    });
 }
 
 
