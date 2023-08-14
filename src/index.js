@@ -50,7 +50,7 @@ function onLoadMore() {
        if (currentPage >= totalHits) {
          console.log(totalHits);
          refs.loadMoreBtn.setAttribute('hidden', true);
-         Notiflix.Notify.failure(
+         Notiflix.Notify.warning(
            `We're sorry, but you've reached the end of search results.`
          );
        } 
@@ -71,19 +71,19 @@ function createMarkup(items) {
     }) => {
     return `
     <div class="photo-card">
-        <img src="${webformatURL}" alt="${tags}" loading="lazy" width="300" height="200"/>
+        <img src="${webformatURL}" alt="${tags}" loading="lazy" width="320" height="200"/>
         <div class="info">
         <p class="info-item">
-        <b>Likes</b>${likes}
+        <b>Likes </b>${likes}
         </p>
         <p class="info-item">
         <b>Views</b>${views}
         </p>
         <p class="info-item">
-        <b>Comments</b>${comments}
+        <b>Comments </b>${comments}
         </p>
         <p class="info-item">
-        <b>Downloads</b>${downloads}
+        <b>Downloads </b>${downloads}
         </p>
         </div>
     </div>`;

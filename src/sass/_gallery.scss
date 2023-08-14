@@ -1,0 +1,85 @@
+.sections{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+
+}
+
+.gallery{
+    // width: 500px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    
+}
+
+.photo-card{
+    width: 320px;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* Центрирование по горизонтали */
+    justify-content: center;
+    /* Центрирование по вертикали */    
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+input[name="searchQuery"] {
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+}
+
+button[type="submit"] {
+    width: 100px;
+    height: 35px;
+    font-size: 20px;
+    background-color: #008cff;
+    color: white;
+}
+
+.info{
+    display: flex;
+    column-gap: 10px;
+    // border: 2px solid black;
+}
+
+.info-item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3px;
+}
+
+img{
+    display: block;
+    background-size: cover;
+}
+
+.load-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 130px;
+    height: 35px;
+    font-size: 16px;
+    background-color: #008cff;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
